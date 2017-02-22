@@ -1,5 +1,5 @@
 //
-//  TravelHomeViewController.h
+//  WebViewController.h
 //  ShengTaiShuiChengForIphone
 //
 //  Created by Apple on 2017/2/22.
@@ -7,8 +7,7 @@
 //
 
 #import "DSXWebViewController.h"
-#import "DSXSearchBar.h"
 
-@interface TravelHomeViewController : DSXWebViewController
+@interface WebViewController : DSXWebViewController
 
 @end

@@ -31,7 +31,9 @@
     _searchView.textField.delegate = self;
     self.navigationItem.titleView = _searchView;
     
-    UIBarButtonItem *moreButton = [DSXUI barButtonWithStyle:DSXBarButtonStyleMore target:self action:@selector(showMessage)];
+//    UIBarButtonItem *moreButton = [DSXUI barButtonWithStyle:DSXBarButtonStyleMore target:self action:@selector(showMessage)];
+//    self.navigationItem.rightBarButtonItem = moreButton;
+    UIBarButtonItem *moreButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon-info.png"] style:UIBarButtonItemStyleDone target:self action:@selector(showMessage)];
     self.navigationItem.rightBarButtonItem = moreButton;
     
     //图片轮播
@@ -62,13 +64,12 @@
     
     //旅游推荐
     [[DSXHttpManager sharedManager] GET:@"&c=ad&a=travellist" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"%@",responseObject);
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
 //            if ([responseObject objectForKey:@"errno"]) {
 //                
 //            }
             _dataArray = [responseObject objectForKey:@"data"];
-            NSLog(@"%@",_dataArray);
+//            NSLog(@"%@",_dataArray);
             [_tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationAutomatic];
         }
         
@@ -76,8 +77,20 @@
         NSLog(@"%@",error);
     }];
     
-    NSString *patha = [[NSBundle mainBundle] pathForResource:@"TravelPlist" ofType:@"plist"];
-    _travelList = [NSArray arrayWithContentsOfFile:patha];
+//    NSString *patha = [[NSBundle mainBundle] pathForResource:@"TravelPlist" ofType:@"plist"];
+//    _travelList = [NSArray arrayWithContentsOfFile:patha];
+    //周边游
+    [[DSXHttpManager sharedManager] GET:@"&c=ad&a=showzhoubian" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+            _traveList = [responseObject objectForKey:@"data"];
+//            NSLog(@"%@",_traveList);
+            [_tableView reloadSections:[NSIndexSet indexSetWithIndex:2] withRowAnimation:UITableViewRowAnimationAutomatic];
+        }
+        
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@",error);
+    }];
     
     //tableView
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
@@ -97,6 +110,7 @@
     [_tableView registerClass:[TravelListTableViewCell class] forCellReuseIdentifier:@"travelCell"];
     [_tableView registerClass:[TitleTableViewCell class] forCellReuseIdentifier:@"ctitleCell"];
     [_tableView registerClass:[HomeAroundViewCell class] forCellReuseIdentifier:@"aroundCell"];
+    NSLog(@"%@",_traveList);
     
 }
 
@@ -186,7 +200,7 @@
         }
     }else
     {
-        if (indexPath.row == 1) {
+        if (indexPath.row == 0) {
             return 50;
         }
         else
@@ -238,7 +252,7 @@
         else
         {
             NSDictionary *dic = [_dataArray objectAtIndex:(indexPath.row -2)];
-            
+//            NSLog(@"%@",_dataArray);
             TravelListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"travelCell" forIndexPath:indexPath];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
 //            cell.bigImage.image = [dic objectForKey:@"bigImg"];
@@ -262,16 +276,8 @@
         }else
         {
             NSDictionary *travelData = [_travelList objectAtIndex:indexPath.row-1];
-//            NSLog(@"%@",travelData);
+            NSLog(@"%@",travelData);
             HomeAroundViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"aroundCell" forIndexPath:indexPath];
-//            cell.imageViews.image = [NSString stringWithFormat:@"%@",[travelData objectForKey:@"image"]];
-//            cell.imageViews.image = [UIImage imageNamed:@"%@",[travelData objectForKey:@"image"]];
-//            cell.imageViews.image = [NSString stringWithFormat:@"%@"];
-            cell.titleLabel.text = [NSString stringWithFormat:@"%@",[travelData objectForKey:@"title"]];
-            cell.onstituteLabel.text = [NSString stringWithFormat:@"%@",[travelData objectForKey:@"acreage"]];
-            cell.distanceLabel.text = [NSString stringWithFormat:@"%@",[travelData objectForKey:@"dist"]];
-            cell.priceLabel.text = [NSString stringWithFormat:@"%@",[travelData objectForKey:@"price"]];
-            cell.addressLabel.text = [NSString stringWithFormat:@"%@",[travelData objectForKey:@"address"]];
             cell.travelData = travelData;
             return cell;
         }

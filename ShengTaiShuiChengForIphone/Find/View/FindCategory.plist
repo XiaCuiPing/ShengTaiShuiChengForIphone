@@ -4,35 +4,35 @@
 <array>
 	<dict>
 		<key>id</key>
-		<string>0</string>
-		<key>icon</key>
-		<string>home-icon-tourism.png</string>
-		<key>title</key>
-		<string>旅游</string>
-	</dict>
-	<dict>
-		<key>id</key>
 		<string>1</string>
 		<key>icon</key>
-		<string>home-icon-hotel.png</string>
+		<string>find-travel-head-strip.png</string>
 		<key>title</key>
-		<string>酒店</string>
+		<string>旅游头条</string>
 	</dict>
 	<dict>
 		<key>id</key>
 		<string>2</string>
 		<key>icon</key>
-		<string>home-icon-cate.png</string>
+		<string>find-travels.png</string>
 		<key>title</key>
-		<string>美食</string>
+		<string>游记</string>
 	</dict>
 	<dict>
 		<key>id</key>
 		<string>3</string>
 		<key>icon</key>
-		<string>home-icon-news.png</string>
+		<string>find-play-method.png</string>
 		<key>title</key>
-		<string>机票预订</string>
+		<string>玩法</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<string>4</string>
+		<key>icon</key>
+		<string>find-welfare.png</string>
+		<key>title</key>
+		<string>旅游福利</string>
 	</dict>
 </array>
 </plist>

@@ -37,11 +37,10 @@
     NSString *keyName = [NSString stringWithFormat:@"gid_%d",_groupid];
     [self showImageWithArray:[[NSUserDefaults standardUserDefaults] arrayForKey:keyName]];
     [[DSXHttpManager sharedManager] GET:@"&c=carousel&a=showcarousel" parameters:@{@"gid":@(_groupid),@"num":@(_num)} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"%@",responseObject);
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             if ([[responseObject objectForKey:@"errno"] intValue] == 0) {
                 _dataList = [responseObject objectForKey:@"data"];
-                NSLog(@"%@",_dataList);
+//                NSLog(@"%@",_dataList);
                 [self showImageWithArray:_dataList];
                 [[NSUserDefaults standardUserDefaults] setObject:_dataList forKey:keyName];
             }
@@ -60,23 +59,29 @@
     for (UIView *subview in _scrollView.subviews) {
         [subview removeFromSuperview];
     }
+    
     CGFloat x = 0;
-    for (int i=0;i<[array count]; i++) {
+    CGFloat w = self.frame.size.width;
+    CGFloat h = self.frame.size.height;
+    
+    for (int i = 0; i<[array count]; i++) {
         NSDictionary *dict = [array objectAtIndex:i];
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(x, 0, self.frame.size.width, self.frame.size.height)];
-        [imageView sd_setImageWithURL:[NSURL URLWithString:[dict objectForKey:@"pic"]]];
-        [imageView setContentMode:UIViewContentModeScaleToFill];
+//        NSLog(@"%@",dict);
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(x, 0, w, h)];
+        imageView.image = [UIImage imageNamed:[dict objectForKey:@"image"]];
+        imageView.contentMode = UIViewContentModeScaleToFill;
         [imageView setTag:i];
         [_scrollView addSubview:imageView];
         
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageViewTap:)];
         [imageView addGestureRecognizer:tap];
         [imageView setUserInteractionEnabled:YES];
-        x+= self.frame.size.width;
+        x+= w;
     }
-    _scrollView.contentSize = CGSizeMake(self.frame.size.width*[_dataList count], 0);
+    
+    _scrollView.contentSize = CGSizeMake(w*[_dataList count], 0);
     _pageControl.numberOfPages = [_dataList count];
-    [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(autoPlay) userInfo:nil repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:4.0 target:self selector:@selector(autoPlay) userInfo:nil repeats:YES];
 }
 
 

@@ -48,6 +48,7 @@
         [_bgview addSubview:_distanceLabel];
         
         _localImage = [[UIImageView alloc] init];
+        _localImage.image = [UIImage imageNamed:@"icon-local"];
         [_bgview addSubview:_localImage];
         
         _priceLabel = [[UILabel alloc] init];
@@ -70,13 +71,17 @@
 {
     _travelData = travelData;
     
-//    _imageViews.image = [travelData objectForKey:@"image"];
-    _titleLabel.text = [NSString stringWithFormat:@"%@",[travelData objectForKey:@"title"]];
-    _onstituteLabel.text = [NSString stringWithFormat:@"%@",[travelData objectForKey:@"acreage"]];
-    _distanceLabel.text = [NSString stringWithFormat:@"%@",[travelData objectForKey:@"dist"]];
-//    _localImage.image = [NSString stringWithFormat:@"%@",[travelData objectForKey:@"icon"]];
-    _priceLabel.text = [NSString stringWithFormat:@"%@",[travelData objectForKey:@"price"]];
-    _addressLabel.text = [NSString stringWithFormat:@"%@",[travelData objectForKey:@"address"]];
+    NSLog(@"%@",travelData);
+    
+    [_imageViews sd_setImageWithURL:[NSURL URLWithString:[travelData objectForKey:@"pic"]]];
+    [_titleLabel setText:[travelData objectForKey:@"title"]];
+    [_onstituteLabel setText:[travelData objectForKey:@"summary"]];
+    [_distanceLabel setText:[travelData objectForKey:@"distance"]];
+//    [_localImage sd_setImageWithURL:[NSURL URLWithString:[travelData objectForKey:@""]]];
+    [_priceLabel setText:[NSString stringWithFormat:@"￥%@起",[travelData objectForKey:@"fare"]]];
+    [_addressLabel setText:[travelData objectForKey:@"address"]];
+    
+    
 }
 
 
@@ -96,10 +101,15 @@
     _onstituteLabel.frame = CGRectMake(imageWidth+25, 40, W, 20);
     _distanceLabel.frame = CGRectMake(imageWidth+25, 70, 100, 20);
     _localImage.frame = CGRectMake(imageWidth+130, 70, 15, 15);
-    _priceLabel.frame = CGRectMake(_bgview.frame.size.width-95, 90, 80, 20);
+    _priceLabel.frame = CGRectMake(_bgview.frame.size.width-95, 70, 80, 20);
     _addressLabel.frame = CGRectMake(imageWidth+25, 90, W, 20);
     
-    
+    if ([self respondsToSelector:@selector(setSeparatorInset:)]) {
+        [self setSeparatorInset:UIEdgeInsetsZero];
+    }
+    if ([self respondsToSelector:@selector(setLayoutMargins:)]) {
+        [self setLayoutMargins:UIEdgeInsetsZero];
+    }
     
 }
 

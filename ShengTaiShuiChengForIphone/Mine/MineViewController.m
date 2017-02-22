@@ -108,7 +108,7 @@
         return 1;
     }
     if (section == 2) {
-        return 5;
+        return 4;
     }
     return 1;
 }
@@ -148,7 +148,7 @@
         
         if (indexPath.row == 0) {
             cell.image = [UIImage imageNamed:@"mine-information.png"];
-            cell.title = @"常用信息";
+            cell.title = @"设置";
 
         }else if (indexPath.row == 1)
         {
@@ -156,16 +156,15 @@
             cell.title = @"我的收藏";
         }else if (indexPath.row == 2)
         {
-            cell.image = [UIImage imageNamed:@"mine-footprint.png"];
-            cell.title = @"我的足迹";
-        }else if (indexPath.row == 3)
-        {
             cell.image = [UIImage imageNamed:@"mine-friends.png"];
             cell.title = @"我的好友";
         }else
         {
+            float cacheSize = (float)[[SDImageCache sharedImageCache] getSize]/1048576;
             cell.image = [UIImage imageNamed:@"mine-history.png"];
-            cell.title = @"历史浏览";
+            cell.title = @"清除缓存";
+            cell.accessoryType = UITableViewCellAccessoryNone;
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2fMB",cacheSize];
         }
         return cell;
     }
@@ -175,7 +174,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    [cell setSelected:NO animated:YES];
+    
+    if (indexPath.section == 3) {
+        if (indexPath.row == 3) {
+            [[SDImageCache sharedImageCache] clearDisk];
+            [[DSXUI standardUI] showPopViewWithStyle:DSXPopViewStyleDefault Message:@"已成功清除缓存"];
+            [_tableView reloadData];
+        }
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

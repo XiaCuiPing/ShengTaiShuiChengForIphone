@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DSXSearchBar.h"
+#import "CategoryView.h"
 
-@interface FindViewController : UIViewController
+@interface FindViewController : UIViewController <CategoryViewDelegate,UITableViewDelegate,UITableViewDataSource>
+{
+    CategoryView *_category;
+}
+
+@property(nonatomic, readonly)UITableView *tableView;
 
 @end

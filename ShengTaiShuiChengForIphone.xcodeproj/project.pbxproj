@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18051B0D1E5D80DF00E15FD4 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18051B0C1E5D80DF00E15FD4 /* WebViewController.m */; };
+		18051B101E5D81B300E15FD4 /* TravelHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18051B0F1E5D81B300E15FD4 /* TravelHomeViewController.m */; };
+		18051B151E5D9BBC00E15FD4 /* find-play-method.png in Resources */ = {isa = PBXBuildFile; fileRef = 18051B111E5D9BBC00E15FD4 /* find-play-method.png */; };
+		18051B161E5D9BBC00E15FD4 /* find-travel-head-strip.png in Resources */ = {isa = PBXBuildFile; fileRef = 18051B121E5D9BBC00E15FD4 /* find-travel-head-strip.png */; };
+		18051B171E5D9BBC00E15FD4 /* find-travels.png in Resources */ = {isa = PBXBuildFile; fileRef = 18051B131E5D9BBC00E15FD4 /* find-travels.png */; };
+		18051B181E5D9BBC00E15FD4 /* find-welfare.png in Resources */ = {isa = PBXBuildFile; fileRef = 18051B141E5D9BBC00E15FD4 /* find-welfare.png */; };
+		18051B1A1E5D9C0500E15FD4 /* FindCategory.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18051B191E5D9C0500E15FD4 /* FindCategory.plist */; };
 		1810F4521E5A86A800E665E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1810F4511E5A86A800E665E7 /* main.m */; };
 		1810F4551E5A86A800E665E7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1810F4541E5A86A800E665E7 /* AppDelegate.m */; };
 		1810F45B1E5A86A800E665E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1810F4591E5A86A800E665E7 /* Main.storyboard */; };
@@ -95,7 +102,6 @@
 		1810F56C1E5A8FF600E665E7 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1810F56B1E5A8FF600E665E7 /* Photos.framework */; };
 		1810F56F1E5A954B00E665E7 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1810F56E1E5A954B00E665E7 /* HomeViewController.m */; };
 		1810F57A1E5A958C00E665E7 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1810F5791E5A958C00E665E7 /* MineViewController.m */; };
-		1810F57D1E5A95A400E665E7 /* TravelHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1810F57C1E5A95A400E665E7 /* TravelHomeViewController.m */; };
 		1810F5801E5A95B400E665E7 /* FindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1810F57F1E5A95B400E665E7 /* FindViewController.m */; };
 		1810F5891E5AA09C00E665E7 /* UserStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 1810F5881E5AA09C00E665E7 /* UserStatus.m */; };
 		1810F58C1E5ABD4100E665E7 /* UINavigationController+style.m in Sources */ = {isa = PBXBuildFile; fileRef = 1810F58B1E5ABD4100E665E7 /* UINavigationController+style.m */; };
@@ -182,6 +188,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18051B0B1E5D80DF00E15FD4 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		18051B0C1E5D80DF00E15FD4 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		18051B0E1E5D81B300E15FD4 /* TravelHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravelHomeViewController.h; sourceTree = "<group>"; };
+		18051B0F1E5D81B300E15FD4 /* TravelHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravelHomeViewController.m; sourceTree = "<group>"; };
+		18051B111E5D9BBC00E15FD4 /* find-play-method.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "find-play-method.png"; sourceTree = "<group>"; };
+		18051B121E5D9BBC00E15FD4 /* find-travel-head-strip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "find-travel-head-strip.png"; sourceTree = "<group>"; };
+		18051B131E5D9BBC00E15FD4 /* find-travels.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "find-travels.png"; sourceTree = "<group>"; };
+		18051B141E5D9BBC00E15FD4 /* find-welfare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "find-welfare.png"; sourceTree = "<group>"; };
+		18051B191E5D9C0500E15FD4 /* FindCategory.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FindCategory.plist; sourceTree = "<group>"; };
 		1810F44D1E5A86A800E665E7 /* ShengTaiShuiChengForIphone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShengTaiShuiChengForIphone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1810F4511E5A86A800E665E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1810F4531E5A86A800E665E7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -349,8 +364,6 @@
 		1810F56E1E5A954B00E665E7 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		1810F5781E5A958C00E665E7 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		1810F5791E5A958C00E665E7 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
-		1810F57B1E5A95A400E665E7 /* TravelHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravelHomeViewController.h; sourceTree = "<group>"; };
-		1810F57C1E5A95A400E665E7 /* TravelHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravelHomeViewController.m; sourceTree = "<group>"; };
 		1810F57E1E5A95B400E665E7 /* FindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindViewController.h; sourceTree = "<group>"; };
 		1810F57F1E5A95B400E665E7 /* FindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindViewController.m; sourceTree = "<group>"; };
 		1810F5871E5AA09C00E665E7 /* UserStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserStatus.h; sourceTree = "<group>"; };
@@ -572,6 +585,8 @@
 				1810F5AC1E5ADBB900E665E7 /* TitleTableViewCell.m */,
 				18A2D7411E5C851A00DB2D81 /* LoginInputView.h */,
 				18A2D7421E5C851A00DB2D81 /* LoginInputView.m */,
+				18051B0B1E5D80DF00E15FD4 /* WebViewController.h */,
+				18051B0C1E5D80DF00E15FD4 /* WebViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -952,6 +967,10 @@
 		1810F5721E5A956000E665E7 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				18051B111E5D9BBC00E15FD4 /* find-play-method.png */,
+				18051B121E5D9BBC00E15FD4 /* find-travel-head-strip.png */,
+				18051B131E5D9BBC00E15FD4 /* find-travels.png */,
+				18051B141E5D9BBC00E15FD4 /* find-welfare.png */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -959,6 +978,7 @@
 		1810F5731E5A956000E665E7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				18051B191E5D9C0500E15FD4 /* FindCategory.plist */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -969,8 +989,8 @@
 				1810F5751E5A956000E665E7 /* Model */,
 				1810F5761E5A956000E665E7 /* UI */,
 				1810F5771E5A956000E665E7 /* View */,
-				1810F57B1E5A95A400E665E7 /* TravelHomeViewController.h */,
-				1810F57C1E5A95A400E665E7 /* TravelHomeViewController.m */,
+				18051B0E1E5D81B300E15FD4 /* TravelHomeViewController.h */,
+				18051B0F1E5D81B300E15FD4 /* TravelHomeViewController.m */,
 			);
 			path = TravelHome;
 			sourceTree = "<group>";
@@ -1163,6 +1183,7 @@
 				187EB5601E5B1678004182B3 /* icon-selected-travel@2x.png in Resources */,
 				187EB5671E5B1678004182B3 /* home-icon-price.png in Resources */,
 				187EB55D1E5B1678004182B3 /* icon-selected-mine@2x.png in Resources */,
+				18051B1A1E5D9C0500E15FD4 /* FindCategory.plist in Resources */,
 				187EB5521E5B1678004182B3 /* icon-home@3x.png in Resources */,
 				18A2D7551E5C8CC300DB2D81 /* mine-friends.png in Resources */,
 				187EB5501E5B1678004182B3 /* icon-home.png in Resources */,
@@ -1171,6 +1192,7 @@
 				187EB5631E5B1678004182B3 /* icon-travel@2x.png in Resources */,
 				187EB54B1E5B1678004182B3 /* home-icon-news.png in Resources */,
 				187EB55A1E5B1678004182B3 /* icon-selected-home@2x.png in Resources */,
+				18051B151E5D9BBC00E15FD4 /* find-play-method.png in Resources */,
 				187EB55F1E5B1678004182B3 /* icon-selected-travel.png in Resources */,
 				187EB56C1E5B1678004182B3 /* icon-home-Orange.png in Resources */,
 				18A2D75B1E5C8CC300DB2D81 /* mine-wallet.png in Resources */,
@@ -1184,10 +1206,13 @@
 				187EB5571E5B1678004182B3 /* icon-selected-find@2x.png in Resources */,
 				187EB5701E5B1678004182B3 /* icon-local.png in Resources */,
 				1810F5A31E5AD5A200E665E7 /* 1.jpg in Resources */,
+				18051B161E5D9BBC00E15FD4 /* find-travel-head-strip.png in Resources */,
 				187EB5551E5B1678004182B3 /* icon-mine@3x.png in Resources */,
 				187EB5541E5B1678004182B3 /* icon-mine@2x.png in Resources */,
+				18051B171E5D9BBC00E15FD4 /* find-travels.png in Resources */,
 				187EB5591E5B1678004182B3 /* icon-selected-home.png in Resources */,
 				187EB5561E5B1678004182B3 /* icon-selected-find.png in Resources */,
+				18051B181E5D9BBC00E15FD4 /* find-welfare.png in Resources */,
 				187EB5491E5B1678004182B3 /* home-icon-cate.png in Resources */,
 				18A2D7581E5C8CC300DB2D81 /* mine-history.png in Resources */,
 				18A2D7541E5C8CC300DB2D81 /* mine-footprint.png in Resources */,
@@ -1229,6 +1254,7 @@
 				1810F5511E5A897F00E665E7 /* DSXShareButtonItem.m in Sources */,
 				1810F52D1E5A897F00E665E7 /* DSXImageManager.m in Sources */,
 				1810F53E1E5A897F00E665E7 /* NSData+ImageContentType.m in Sources */,
+				18051B0D1E5D80DF00E15FD4 /* WebViewController.m in Sources */,
 				1810F51A1E5A897F00E665E7 /* AFURLSessionManager.m in Sources */,
 				1810F5351E5A897F00E665E7 /* DSXRefreshHeader.m in Sources */,
 				1810F5441E5A897F00E665E7 /* SDWebImageDownloader.m in Sources */,
@@ -1256,7 +1282,6 @@
 				1810F51F1E5A897F00E665E7 /* UIScrollView+Touch.m in Sources */,
 				1810F58C1E5ABD4100E665E7 /* UINavigationController+style.m in Sources */,
 				1810F5361E5A897F00E665E7 /* DSXRefreshView.m in Sources */,
-				1810F57D1E5A95A400E665E7 /* TravelHomeViewController.m in Sources */,
 				1810F5151E5A897F00E665E7 /* AFHTTPSessionManager.m in Sources */,
 				18A2D7461E5C85A500DB2D81 /* RegisterViewController.m in Sources */,
 				1810F5291E5A897F00E665E7 /* DSXCLLocationManager.m in Sources */,
@@ -1277,6 +1302,7 @@
 				185589F31E5D27980030BC62 /* MineCategoryView.m in Sources */,
 				1810F5971E5AC7CF00E665E7 /* SliderScrollView.m in Sources */,
 				1810F52A1E5A897F00E665E7 /* DSXCookieHelper.m in Sources */,
+				18051B101E5D81B300E15FD4 /* TravelHomeViewController.m in Sources */,
 				1810F5341E5A897F00E665E7 /* DSXRefreshFooter.m in Sources */,
 				1810F54B1E5A897F00E665E7 /* UIImage+WebP.m in Sources */,
 				1810F5121E5A897F00E665E7 /* NSData+Base64.m in Sources */,

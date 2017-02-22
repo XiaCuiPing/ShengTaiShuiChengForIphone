@@ -463,6 +463,10 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
     [self.memCache removeAllObjects];
 }
 
+- (void)clearDisk {
+    [self clearDiskOnCompletion:nil];
+}
+
 - (void)clearDiskOnCompletion:(nullable SDWebImageNoParamsBlock)completion {
     dispatch_async(self.ioQueue, ^{
         [_fileManager removeItemAtPath:self.diskCachePath error:nil];

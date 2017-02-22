@@ -25,10 +25,10 @@
     TravelListTableViewCell *_traveList;
     HomeWeatherViewCell *_homeWeather;
     
-    NSArray *_travelList;
     NSArray *_dataArray;
 }
 
+@property(nonatomic, readonly)NSArray *travelList;
 @property(nonatomic, retain)UITableView *tableView;
 
 @end

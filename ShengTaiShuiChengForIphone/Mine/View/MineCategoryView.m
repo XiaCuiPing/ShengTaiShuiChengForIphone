@@ -59,39 +59,8 @@
     NSDictionary *data = [_categoryList objectAtIndex:indexPath.row];
     MineCategoryViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"catCell" forIndexPath:indexPath];
     cell.data = data;
-    //    cell.layer.borderColor = [[UIColor grayColor] colorWithAlphaComponent:0.3].CGColor;//边框
-    //    cell.layer.borderWidth = 0.5;
-    //点击变色
-    //    UIView* selectedBGView = [[UIView alloc] initWithFrame:cell.bounds];
-    //    selectedBGView.backgroundColor = [UIColor orangeColor];
-    //    cell.selectedBackgroundView = selectedBGView;
-    
     return cell;
 }
-
-//当cell高亮时返回是否高亮
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    return YES;
-}
-
-//高亮状态下
-- (void)collectionView:(UICollectionView *)colView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    UICollectionViewCell* cell = [colView cellForItemAtIndexPath:indexPath];
-    //设置(Highlight)高亮下的颜色
-    [cell setBackgroundColor:[UIColor orangeColor]];
-    
-}
-
-//正常状态下的颜色
-- (void)collectionView:(UICollectionView *)colView  didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    UICollectionViewCell* cell = [colView cellForItemAtIndexPath:indexPath];
-    //设置(Nomal)正常状态下的颜色
-    [cell setBackgroundColor:[UIColor whiteColor]];
-}
-
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     NSDictionary *data = [_categoryList objectAtIndex:indexPath.row];

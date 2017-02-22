@@ -72,7 +72,7 @@ NSString *const DSXFontStyleBlack = @"Noto-Sans-S-Chinese-Black";
     return barButtonItem;
 }
 
-+ (void)showPopViewWithStyle:(DSXPopViewStyle)style Message:(NSString *)message{
+- (void)showPopViewWithStyle:(DSXPopViewStyle)style Message:(NSString *)message{
     NSString *imageName;
     switch (style) {
         case DSXPopViewStyleSuccess:

@@ -215,6 +215,12 @@ typedef void(^SDWebImageCalculateSizeBlock)(NSUInteger fileCount, NSUInteger tot
 - (void)clearMemory;
 
 /**
+ * Clear all disk cached images
+ * @see clearDiskOnCompletion:
+ */
+- (void)clearDisk;
+
+/**
  * Async clear all disk cached images. Non-blocking method - returns immediately.
  * @param completion    A block that should be executed after cache expiration completes (optional)
  */

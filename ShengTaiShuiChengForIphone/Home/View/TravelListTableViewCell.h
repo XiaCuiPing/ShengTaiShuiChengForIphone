@@ -11,7 +11,7 @@
 @interface TravelListTableViewCell : UITableViewCell
 
 @property(nonatomic, readonly)UIImageView *bigImage;//大图
-@property(nonatomic, readonly)UIImageView *customizedImg;//定制图片
+@property(nonatomic, readonly)UIImageView *customizedImg;//(团购)背景图片
 @property(nonatomic, strong)UILabel *customizedLabel;
 @property(nonatomic, strong)UILabel *titleLabel;
 @property(nonatomic, strong)UILabel *detailLabel;

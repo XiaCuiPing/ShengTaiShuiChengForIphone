@@ -22,6 +22,7 @@
         _collectionView = [[UICollectionView alloc] initWithFrame:self.frame collectionViewLayout:layout];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
+        _collectionView.scrollEnabled = NO;
         _collectionView.backgroundColor = [UIColor clearColor];
         
         [_collectionView registerClass:[CategoryViewCell class] forCellWithReuseIdentifier:@"cellItem"];

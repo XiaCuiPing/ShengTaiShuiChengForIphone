@@ -42,6 +42,6 @@ UIKIT_EXTERN NSString *const DSXFontStyleBlack;
 + (UIBarButtonItem *)barButtonWithImage:(NSString *)imageName target:(id)target action:(SEL)action;
 + (UIBarButtonItem *)barButtonWithStyle:(DSXBarButtonStyle)style target:(id)target action:(SEL)action;
 
-+ (void)showPopViewWithStyle:(DSXPopViewStyle)style Message:(NSString *)message;
+- (void)showPopViewWithStyle:(DSXPopViewStyle)style Message:(NSString *)message;
 
 @end
