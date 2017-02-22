@@ -1,0 +1,35 @@
+//
+//  PrefixHeader.pch
+//  ShengTaiShuiChengForIphone
+//
+//  Created by Apple on 2017/2/20.
+//  Copyright © 2017年 夏翠萍. All rights reserved.
+//
+
+#define DEBUG 1
+#define SITEAPI @"http://stsc.liaidicn.com/app.php?platform=ios&appkey=5a379b5eed8aaae531df5f60b12100cfb6dff2c1"
+#define SITEURI @"http://stsc.liaidicn.com/app.php?platform=ios&appkey=5a379b5eed8aaae531df5f60b12100cfb6dff2c1"
+#define SCHEME @"shengtaishuicheng"
+
+//加密秘钥
+#define AUTHKEY @"000000000000"
+
+#define SWIDTH [UIScreen mainScreen].bounds.size.width
+#define SHEIGHT [UIScreen mainScreen].bounds.size.height
+#define TOPHEIGHT [[UIApplication sharedApplication] statusBarFrame].size.height+self.navigationController.navigationBar.frame.size.height
+#define IOSVERSION [[[UIDevice currentDevice] systemVersion] floatValue]
+//#define PLACEHOLDERIMAGE [UIImage imageNamed:@"placeholder.png"]
+
+
+
+
+
+
+#import "DSXFramework.h"
+#import <JavaScriptCore/JavaScriptCore.h>
+#import "UserStatus.h"
+#import "UINavigationController+style.h"
+#import "UIImageView+WebCache.h"
+
+
+
