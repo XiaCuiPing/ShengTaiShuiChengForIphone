@@ -26,9 +26,9 @@
     HomeWeatherViewCell *_homeWeather;
     
     NSArray *_dataArray;
+    NSArray *_travelArray;
 }
 
-@property(nonatomic, readonly)NSArray *travelList;
 @property(nonatomic, retain)UITableView *tableView;
 
 @end

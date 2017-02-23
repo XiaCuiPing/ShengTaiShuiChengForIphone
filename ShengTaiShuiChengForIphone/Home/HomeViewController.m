@@ -65,12 +65,11 @@
     //旅游推荐
     [[DSXHttpManager sharedManager] GET:@"&c=ad&a=travellist" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
-//            if ([responseObject objectForKey:@"errno"]) {
-//                
-//            }
-            _dataArray = [responseObject objectForKey:@"data"];
-//            NSLog(@"%@",_dataArray);
-            [_tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationAutomatic];
+            if ([responseObject objectForKey:@"errno"]) {
+                _dataArray = [responseObject objectForKey:@"data"];
+                NSLog(@"%@",_dataArray);
+                [_tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationAutomatic];
+            }
         }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -82,11 +81,10 @@
     //周边游
     [[DSXHttpManager sharedManager] GET:@"&c=ad&a=showzhoubian" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
-            _traveList = [responseObject objectForKey:@"data"];
-//            NSLog(@"%@",_traveList);
+            _travelArray = [responseObject objectForKey:@"data"];
+            NSLog(@"%@",_travelArray);
             [_tableView reloadSections:[NSIndexSet indexSetWithIndex:2] withRowAnimation:UITableViewRowAnimationAutomatic];
         }
-        
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@",error);
@@ -110,7 +108,6 @@
     [_tableView registerClass:[TravelListTableViewCell class] forCellReuseIdentifier:@"travelCell"];
     [_tableView registerClass:[TitleTableViewCell class] forCellReuseIdentifier:@"ctitleCell"];
     [_tableView registerClass:[HomeAroundViewCell class] forCellReuseIdentifier:@"aroundCell"];
-    NSLog(@"%@",_traveList);
     
 }
 
@@ -168,7 +165,7 @@
     }
     else
     {
-        return 5;
+        return [_travelArray count]+1;
     }
 }
 
@@ -205,7 +202,7 @@
         }
         else
         {
-            return 120;
+            return SWIDTH;
         }
     }
     return 50;
@@ -248,8 +245,7 @@
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"buttonCell" forIndexPath:indexPath];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             return cell;
-        }
-        else
+        }else
         {
             NSDictionary *dic = [_dataArray objectAtIndex:(indexPath.row -2)];
 //            NSLog(@"%@",_dataArray);
@@ -257,11 +253,11 @@
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
 //            cell.bigImage.image = [dic objectForKey:@"bigImg"];
 //            cell.customizedImg.image = [dic objectForKey:@"icon"];
-            cell.customizedLabel.text = [NSString stringWithFormat:@"%@",[dic objectForKey:@"cutext"]];
-//
-            cell.titleLabel.text = [NSString stringWithFormat:@"%@",[dic objectForKey:@"title"]];
-            cell.detailLabel.text = [NSString stringWithFormat:@"%@",[dic objectForKey:@"detail"]];
-            cell.priceLabel.text = [NSString stringWithFormat:@"%@",[dic objectForKey:@"price"]];
+//            cell.customizedLabel.text = [NSString stringWithFormat:@"%@",[dic objectForKey:@"cutext"]];
+////
+//            cell.titleLabel.text = [NSString stringWithFormat:@"%@",[dic objectForKey:@"title"]];
+//            cell.detailLabel.text = [NSString stringWithFormat:@"%@",[dic objectForKey:@"detail"]];
+//            cell.priceLabel.text = [NSString stringWithFormat:@"%@",[dic objectForKey:@"price"]];
             cell.dataTravel = dic;
             return cell;
         }
@@ -275,7 +271,7 @@
             cell.title = @"周边游推荐";
         }else
         {
-            NSDictionary *travelData = [_travelList objectAtIndex:indexPath.row-1];
+            NSDictionary *travelData = [_travelArray objectAtIndex:indexPath.row-1];
             NSLog(@"%@",travelData);
             HomeAroundViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"aroundCell" forIndexPath:indexPath];
             cell.travelData = travelData;
